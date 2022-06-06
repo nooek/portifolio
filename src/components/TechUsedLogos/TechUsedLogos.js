@@ -36,10 +36,9 @@ const TechUsedLogos = ({ logos }) => {
 
   return (
     <SectionsTechsLogosContainer>
-      {logos.map((logo) => {
-        console.log(logo.name);
+      {logos.map((logo, index) => {
         return (
-          <SectionsTechLogoContainer>
+          <SectionsTechLogoContainer key={index}>
             <SectionsTechsLogos
               src={logo.logo}
               ref={logoRef}

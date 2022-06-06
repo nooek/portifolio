@@ -6,28 +6,13 @@ import ScreenSize from "../../getWindowSize";
 import handlePosition from "../../InteractiveImages/handlePosition";
 
 const GamesMarketImage = (props) => {
-  // const handlePosition = (area) => {
-  //   const changeFlashCardImage = new ChangeFlashCardImage(area.name);
-  //   const changeFlashcardMap = new ChangeFlashcardMap(area.name);
-  //   const newImage = changeFlashCardImage.change();
-  //   if (newImage !== props.pagesInfo[props.index].pageVisited) {
-  //     props.setPagesInfo([
-  //       ...props.pagesInfo,
-  //       {
-  //         pageVisited: newImage,
-  //         pageVisitedName: area.name,
-  //         map: changeFlashcardMap.change(),
-  //       },
-  //     ]);
-  //     props.setIndex(props.pagesInfo.length);
-  //   }
-  // };
+  const screenSize = ScreenSize()
 
   return (
     <ImageMapper
       src={props.pagesInfo[props.index].pageVisited}
       map={props.pagesInfo[props.index].map}
-      width={ScreenSize().winWidth * 0.85}
+      width={screenSize.winWidth * screenSize.multiplier}
       imgWidth={2000}
       onClick={(area) =>
         handlePosition(

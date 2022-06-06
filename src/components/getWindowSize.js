@@ -21,5 +21,5 @@ export default function ScreenSize() {
     };
   }, [windowDimension]);
 
-  return windowDimension
+  return { ...windowDimension, multiplier: 0.85 }
 }
