@@ -60,6 +60,10 @@ export const SectionsName = styled.h2 `
   color: white;
   font-family: 'Roboto', sans-serif;
   margin-left: 15px;
+  @media(max-width: 500px) {
+    font-size: 30px;
+    margin-left: 10px;
+  }
 `
 
 export const SectionsDescriptionContainer = styled.div `
@@ -71,6 +75,10 @@ export const SectionsDescription = styled.h2 `
   color: white;
   font-family: 'Inter', sans-serif;
   margin-left: 25px;
+  @media(max-width: 500px) {
+    font-size: 20px;
+    margin-left: 15px;
+  }
 `
 
 export const InteractiveProjectAlert = styled.h2 `
