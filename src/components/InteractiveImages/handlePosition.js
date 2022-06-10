@@ -1,16 +1,18 @@
+import { addPage } from "../../store/pagesInfo/pagesInfo"
+
 const handlePosition = (data, functions) => {
-  console.log(data)
   console.log(functions)
   const newImage = functions.changeFlashCardImage.change();
   if (newImage !== data.pagesInfo[data.index].pageVisited) {
-    functions.setPagesInfo([
+    functions.dispatch(addPage([
       ...data.pagesInfo,
       {
         pageVisited: newImage,
         pageVisitedName: data.areaName,
         map: functions.changeFlashcardMap.change(),
       },
-    ]);
+    ]));
+    console.log(data.pagesInfo)
     functions.setIndex(data.pagesInfo.length);
   }
 };

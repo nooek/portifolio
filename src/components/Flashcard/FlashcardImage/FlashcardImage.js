@@ -4,6 +4,7 @@ import ChangeFlashCardImage from "../../../services/flashcard/changeFlashcardIma
 import ChangeFlashcardMap from "../../../services/flashcard/changeFlashcardMap";
 import ScreenSize from "../../getWindowSize";
 import handlePosition from "../../InteractiveImages/handlePosition";
+import getSizeImage from "../../../services/getSizeImage"
 
 const GamesMarketImage = (props) => {
   const screenSize = ScreenSize()
@@ -12,7 +13,7 @@ const GamesMarketImage = (props) => {
     <ImageMapper
       src={props.pagesInfo[props.index].pageVisited}
       map={props.pagesInfo[props.index].map}
-      width={screenSize.winWidth * screenSize.multiplier}
+      width={getSizeImage(screenSize.winWidth)}
       imgWidth={2000}
       onClick={(area) =>
         handlePosition(
@@ -24,8 +25,8 @@ const GamesMarketImage = (props) => {
           {
             changeFlashCardImage: new ChangeFlashCardImage(area.name),
             changeFlashcardMap: new ChangeFlashcardMap(area.name),
-            setPagesInfo: props.setPagesInfo,
             setIndex: props.setIndex,
+            dispatch: props.dispatch
           },
         )
       }

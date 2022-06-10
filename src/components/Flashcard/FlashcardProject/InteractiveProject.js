@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { ChangersBtnsContainer, Middle, ImagesContainer } from "../../../pages/Flashcard/Styles";
 import GamesMarketImage from "../FlashcardImage/FlashcardImage";
-import { flashcardHome } from "../../../assets/images/flashcard/index"
-import { homeMap } from "../FlashcardImage/Maps/HomeMap"
+import { useSelector, useDispatch } from 'react-redux'
 
 const InteractiveProject = () => {
-  const [pagesInfo, setPagesInfo] = useState([
-    {
-      pageVisited: flashcardHome,
-      pageVisitedName: "home",
-      map: homeMap,
-    },
-  ]);
+  const pagesInfo = useSelector(state => state.pagesInfo.pagesInfo)
+  const dispatch = useDispatch()
   const [index, setIndex] = useState(0);
+
   return (
     <ImagesContainer>
       <ChangersBtnsContainer>
@@ -28,7 +23,7 @@ const InteractiveProject = () => {
           index={index}
           setIndex={setIndex}
           pagesInfo={pagesInfo}
-          setPagesInfo={setPagesInfo}
+          dispatch={dispatch}
         />
       </Middle>
       <ChangersBtnsContainer>

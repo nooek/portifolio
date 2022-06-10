@@ -1,10 +1,12 @@
 import styled from "styled-components"
+import { motion } from "framer-motion";
 
 export const Container = styled.div `
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `
 
 export const ChangersBtnsContainer = styled.div `
@@ -55,7 +57,7 @@ export const SectionsNameContainer = styled.div `
   align-items: center;
 `
 
-export const SectionsName = styled.h2 `
+export const SectionsName = styled(motion.h2) `
   font-size: 40px;
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -70,7 +72,7 @@ export const SectionsDescriptionContainer = styled.div `
   flex: 1;
 `
 
-export const SectionsDescription = styled.h2 `
+export const SectionsDescription = styled(motion.h2) `
   font-size: 23px;
   color: white;
   font-family: 'Inter', sans-serif;

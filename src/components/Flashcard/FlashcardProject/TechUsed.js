@@ -15,8 +15,7 @@ import {
 } from "../../../assets/images/techUsed/index";
 import {
   titleAnimation,
-  descAnimation,
-} from "./Animations"
+} from "../../GeneralAnimations/GeneralAnimations"
 import TechUsedLogos from "../../TechUsedLogos/TechUsedLogos";
 
 const TechUsed = () => {

@@ -29,8 +29,6 @@ const TechUsedLogos = ({ logos }) => {
   useEffect(() => {
     if (logoInView) {
       controlLogo.start("visible");
-    } else {
-      controlLogo.start("hidden");
     }
   }, [controlLogo, logoInView]);
 
@@ -41,6 +39,7 @@ const TechUsedLogos = ({ logos }) => {
           <SectionsTechLogoContainer key={index}>
             <SectionsTechsLogos
               src={logo.logo}
+              key={index}
               ref={logoRef}
               variants={logoAnimation}
               initial="hidden"
