@@ -1,17 +1,27 @@
 import React from "react";
 import { Container, SectionsContainer, InteractiveProjectAlert } from "./Styles";
-import InteractiveProject from "../../components/Flashcard/FlashcardProject/InteractiveProject";
+import InteractiveProject from "../../components/InteractiveProject/InteractiveProject";
+import FlashcardImage from "../../components/Flashcard/FlashcardImage/FlashcardImage"
 import TechUsed from "../../components/Flashcard/FlashcardProject/TechUsed";
 import {
   WhatTheProjectAboutDesc,
   WhatTheProjectAboutTitle,
 } from "../../components/GeneralSections/WhatTheProjectAbout/index";
 import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitRepo/index";
+import { flashcardHome } from "../../assets/images/flashcard/index"
+import { homeMap } from "../../components/Flashcard/FlashcardImage/Maps/HomeMap"
 
 const Flashcard = () => {
   return (
     <Container>
-      <InteractiveProject />
+      <InteractiveProject 
+        ImageComponent={FlashcardImage}
+        defaultPageInfo={{
+          image: flashcardHome,
+          areaName: 'home',
+          map: homeMap
+        }}
+      />
       <InteractiveProjectAlert>
         You can interect with the image above, just a little way to take a quick look at the project
       </InteractiveProjectAlert>
@@ -26,8 +36,10 @@ const Flashcard = () => {
         />
       </SectionsContainer>
       <TechUsed />
-      <GitRepoTitle />
-      <GitRepoDesc linkGit="https://github.com/nooek/flashcard" />
+      <SectionsContainer>
+        <GitRepoTitle />
+        <GitRepoDesc linkGit="https://github.com/nooek/flashcard" />
+      </SectionsContainer>
     </Container>
   );
 };

@@ -27,7 +27,7 @@ const Project = ({ name, images, desc, route }) => {
   const controlDescContainer = useAnimation();
   const controlImg = useAnimation();
   const [ImgRef, ImgInView] = useInView();
-  const [closed, setClosed] = useState(false);
+  const [closed, setClosed] = useState(0);
 
   useEffect(() => {
     if (ImgInView) {
@@ -64,17 +64,17 @@ const Project = ({ name, images, desc, route }) => {
   }, [closed, controlDescContainer, controlImg]);
 
   return (
-    <Container closed={closed}>
+    <Container closedimg={closed}>
       <Images
         src={images}
         ref={ImgRef}
         variants={imgAnimation}
         initial="hidden"
         animate={controlImg}
-        closed={closed}
+        closedimg={closed}
       />
-      <DescriptionContainer closed={closed}>
-        <DescriptionContentContainer closed={closed}>
+      <DescriptionContainer closedimg={closed}>
+        <DescriptionContentContainer closedimg={closed}>
           <DescriptionTitle
             ref={titleDescRef}
             variants={titleDescAnimation}
@@ -102,11 +102,11 @@ const Project = ({ name, images, desc, route }) => {
           </MoreInfoButton>
         </DescriptionContentContainer>
         {closed ? (
-          <CloseDescription closed={closed} onClick={() => setClosed(false)}>
+          <CloseDescription closedimg={closed} onClick={() => setClosed(0)}>
             Open
           </CloseDescription>
         ) : (
-          <CloseDescription closed={closed} onClick={() => setClosed(true)}>
+          <CloseDescription closedimg={closed} onClick={() => setClosed(1)}>
             Close
           </CloseDescription>
         )}

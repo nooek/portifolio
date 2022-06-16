@@ -6,16 +6,16 @@ export const Container = styled.div`
   min-height: 500px;
   max-height: auto;
   display: flex;
-  flex-direction: ${(props) => (props.closed ? "column" : "row")};
-  align-items: ${(props) => (props.closed ? "center" : "none")};
-  justify-content: ${(props) => (props.closed ? "space-between" : "none")};
+  flex-direction: ${(props) => (props.closedimg ? "column" : "row")};
+  align-items: ${(props) => (props.closedimg ? "center" : "none")};
+  justify-content: ${(props) => (props.closedimg ? "space-between" : "none")};
   border-bottom: 3px solid white;
   position: relative;
   margin-top: 50px;
 `;
 
 export const ImagesContainer = styled.div`
-  width: ${(props) => (props.closed ? "100%" : "60%")};
+  width: ${(props) => (props.closedimg ? "100%" : "60%")};
   height: 100%;
   border: 2px solid blue;
 `;
@@ -36,12 +36,13 @@ export const DescriptionContainer = styled.div`
   flex-wrap: wrap;
   word-break: break-word;
   overflow: hidden;
-  /* border-left: ${(props) => (props.closed ? "none" : "2px solid white")}; */
+  /* border-left: ${(props) => (props.closedimg ? "none" : "2px solid white")}; */
 `;
 
 export const DescriptionContentContainer = styled.div`
-  width: ${(props) => (props.closed ? "0%" : "100%")};
+  width: ${(props) => (props.closedimg ? "0%" : "100%")};
   height: 95%;
+  ${props => console.log(props.closedimg)}
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -89,10 +90,10 @@ export const CloseDescription = styled.button`
   background: linear-gradient(90deg, rgb(4, 89, 7), rgb(3, 115, 7), rgb(3, 133, 7));
   color: white;
   font-size: 15px;
-  position: ${(props) => (props.closed ? "absolute" : "relative")};
+  position: ${(props) => (props.closedimg ? "absolute" : "relative")};
   bottom: 0;
   &:hover {
-    animation: ${closeAnimation} 0.2s linear;
+    animation: ${closeAnimation} 0.4s linear;
     animation-fill-mode: forwards;  
     z-index: 2;
   }

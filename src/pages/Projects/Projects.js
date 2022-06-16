@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Container, Header, Title, ProjectsContainer } from "./Styles";
-import { gamesMarketHome } from "../../assets/images/gamesMarket/index";
+import { gmHome } from "../../assets/images/gamesMarket/index";
 import { talkingAppHome } from "../../assets/images/talkingApp/index";
 import { flashcardHome } from "../../assets/images/flashcard/index"
 import Project from "../../components/Project/Project";
@@ -32,7 +32,7 @@ const Projects = () => {
       <ProjectsContainer>
         <Project
           name="Games Market"
-          images={gamesMarketHome}
+          images={gmHome}
           desc="It is a games market was build based on Steam, 
           G2A and other sites. You can publish and download games, 
           as well as comment about them and rate them."

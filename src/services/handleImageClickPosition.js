@@ -1,10 +1,8 @@
-import { addPage } from "../../store/pagesInfo/pagesInfo"
-
 const handlePosition = (data, functions) => {
   console.log(functions)
   const newImage = functions.changeFlashCardImage.change();
   if (newImage !== data.pagesInfo[data.index].pageVisited) {
-    functions.dispatch(addPage([
+    functions.dispatch(functions.addPage([
       ...data.pagesInfo,
       {
         pageVisited: newImage,

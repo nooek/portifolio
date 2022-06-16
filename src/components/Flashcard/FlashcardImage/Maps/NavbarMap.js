@@ -1,10 +1,3 @@
-// {
-//   name: "home",
-//   shape: "rect",
-//   coords: [1349, 73, 1200, 22],
-//   preFillColor: "green",
-// },
-
 const areasNavbarHome = [
   {
     name: "home",

@@ -1,19 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { flashcardHome } from "../../assets/images/flashcard/index"
-import { homeMap } from "../../components/Flashcard/FlashcardImage/Maps/HomeMap"
 
 export const pagesInfo = createSlice({
   name: 'pagesInfo',
   initialState: {
-    pagesInfo: [{
-      pageVisited: flashcardHome,
-      pageVisitedName: "home",
-      map: homeMap,
-    }]
+    data: [{}]
   },
   reducers: {
     addPage: (state, action) => {
-      state.pagesInfo = action.payload
+      state.data = action.payload
     }
   }
 })

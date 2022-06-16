@@ -3,10 +3,10 @@ import ImageMapper from "react-image-mapper";
 import ChangeFlashCardImage from "../../../services/flashcard/changeFlashcardImage";
 import ChangeFlashcardMap from "../../../services/flashcard/changeFlashcardMap";
 import ScreenSize from "../../getWindowSize";
-import handlePosition from "../../InteractiveImages/handlePosition";
+import handleImageClickPosition from "../../../services/handleImageClickPosition";
 import getSizeImage from "../../../services/getSizeImage"
 
-const GamesMarketImage = (props) => {
+const FlashcardImage = (props) => {
   const screenSize = ScreenSize()
 
   return (
@@ -16,7 +16,7 @@ const GamesMarketImage = (props) => {
       width={getSizeImage(screenSize.winWidth)}
       imgWidth={2000}
       onClick={(area) =>
-        handlePosition(
+        handleImageClickPosition(
           {
             index: props.index,
             areaName: area.name,
@@ -26,7 +26,8 @@ const GamesMarketImage = (props) => {
             changeFlashCardImage: new ChangeFlashCardImage(area.name),
             changeFlashcardMap: new ChangeFlashcardMap(area.name),
             setIndex: props.setIndex,
-            dispatch: props.dispatch
+            dispatch: props.dispatch,
+            addPage: props.addPage
           },
         )
       }
@@ -34,4 +35,4 @@ const GamesMarketImage = (props) => {
   );
 };
 
-export default GamesMarketImage;
+export default FlashcardImage;
