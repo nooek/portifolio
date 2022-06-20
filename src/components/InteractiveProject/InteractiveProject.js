@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChangersBtnsContainer, Middle, ImagesContainer } from "../../pages/Flashcard/Styles";
+import { ChangersBtnsContainer, Middle, ImagesContainer } from "./Styles";
 import { useSelector, useDispatch } from "react-redux";
 import { addPage } from "../../store/pagesInfo/pagesInfo";
 
@@ -24,14 +24,6 @@ const InteractiveProject = ({ ImageComponent, defaultPageInfo }) => {
 
   return (
     <ImagesContainer>
-      <ChangersBtnsContainer>
-        <button
-          onClick={() => setIndex(index - 1)}
-          disabled={pagesInfo[index - 1] !== undefined ? false : true}
-        >
-          Previous
-        </button>
-      </ChangersBtnsContainer>
       <Middle>
         {!loading ? (
           <ImageComponent
@@ -45,6 +37,14 @@ const InteractiveProject = ({ ImageComponent, defaultPageInfo }) => {
       </Middle>
       <ChangersBtnsContainer>
         <button
+          style={{ margin: "10px" }}
+          onClick={() => setIndex(index - 1)}
+          disabled={pagesInfo[index - 1] !== undefined ? false : true}
+        >
+          Previous
+        </button>
+        <button
+          style={{ margin: "5px" }}
           onClick={() => setIndex(index + 1)}
           disabled={pagesInfo[index + 1] !== undefined ? false : true}
         >

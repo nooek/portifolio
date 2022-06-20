@@ -5,6 +5,7 @@ import reactLogo from "./react-logo.svg"
 import styledComponentsLogo from "./styledComponents-logo.png"
 import nodeJsLogo from "./nodejs-logo.png"
 import mySqlLogo from "./mysql-logo.png"
+import sequelizeLogo from "./sequelize-logo.png"
 
 export {
   javascriptLogo,
@@ -13,5 +14,6 @@ export {
   reactLogo,
   styledComponentsLogo,
   nodeJsLogo,
-  mySqlLogo
+  mySqlLogo,
+  sequelizeLogo
 }

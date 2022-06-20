@@ -11,6 +11,6 @@ export const descAnimation = {
 export const imgAnimation = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
   hidden: { opacity: 0 },
-  descClosed: { width: "100%", height: "90%", transition: { duration: 0.8 } },
-  descOpen: { width: "50%", height: "100%", transition: { duration: 0.1 } },
+  descClosed: { width: "100%", height: "100%", transition: { duration: 0.8 } },
+  descOpen: { width: "100%", height: "100%", transition: { duration: 0.1 } },
 };

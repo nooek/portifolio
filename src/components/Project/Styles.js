@@ -12,18 +12,26 @@ export const Container = styled.div`
   border-bottom: 3px solid white;
   position: relative;
   margin-top: 50px;
+  @media(max-width: 680px) {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+  }
 `;
 
 export const ImagesContainer = styled.div`
-  width: ${(props) => (props.closedimg ? "100%" : "60%")};
+  width: ${(props) => (props.closedimg ? "100%" : "50%")};
   height: 100%;
-  border: 2px solid blue;
+  @media(max-width: 680px) {
+    width: 100%;
+  }
 `;
 
 export const Images = styled(motion.img)`
-  width: 50%;
-  height: 100%;
   object-fit: contain;
+  @media(max-width: 680px) {
+    width: 100%;
+  }
 `;
 
 export const DescriptionContainer = styled.div`
@@ -36,18 +44,32 @@ export const DescriptionContainer = styled.div`
   flex-wrap: wrap;
   word-break: break-word;
   overflow: hidden;
-  /* border-left: ${(props) => (props.closedimg ? "none" : "2px solid white")}; */
+  @media(max-width: 680px) {
+    width: 100%;
+    height: auto;
+    align-items: left;
+    overflow: visible;
+    flex-wrap: nowrap;
+    word-break: break-all;
+  }
 `;
 
 export const DescriptionContentContainer = styled.div`
   width: ${(props) => (props.closedimg ? "0%" : "100%")};
   height: 95%;
-  ${props => console.log(props.closedimg)}
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   word-break: break-word;
   overflow: hidden;
+  @media(max-width: 680px) {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    word-break: break-all;
+  }
 `;
 
 export const DescriptionTitle = styled(motion.h2)`
@@ -56,6 +78,10 @@ export const DescriptionTitle = styled(motion.h2)`
   text-align: left;
   font-family: "Roboto", "Sans-serif";
   margin-left: 20px;
+  @media(max-width: 680px) {
+    margin-left: 0px;
+    font-size: 25px;
+  }
 `;
 
 export const Description = styled(motion.h2)`
@@ -64,6 +90,13 @@ export const Description = styled(motion.h2)`
   text-align: left;
   font-family: "Roboto", "Sans-serif";
   margin-left: 25px;
+  @media(max-width: 750px) {
+    font-size: 3vw;
+  }
+  @media(max-width: 680px) {
+    margin-left: 0px;
+    font-size: 15px;
+  }
 `;
 
 export const MoreInfoButton = styled(motion.button) `
@@ -76,6 +109,17 @@ export const MoreInfoButton = styled(motion.button) `
   background: linear-gradient(90deg, rgb(4, 89, 7), rgb(3, 115, 7), rgb(3, 133, 7));
   &:hover {
     transform: scale(1.02);
+  }
+  @media(max-width: 750px) {
+    width: 40%;
+    font-size: 3vw;
+  }
+  @media(max-width: 680px) {
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    font-size: 1.5vmax;
+    margin-left: 0px;
   }
 `
 
@@ -96,5 +140,8 @@ export const CloseDescription = styled.button`
     animation: ${closeAnimation} 0.4s linear;
     animation-fill-mode: forwards;  
     z-index: 2;
+  }
+  @media(max-width: 680px) {
+    display: none;
   }
 `;

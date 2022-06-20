@@ -10,7 +10,8 @@ import {
   DescriptionTitle,
   Description,
   CloseDescription,
-  MoreInfoButton
+  MoreInfoButton,
+  ImagesContainer
 } from "./Styles";
 import {
   titleDescAnimation,
@@ -22,6 +23,8 @@ const Project = ({ name, images, desc, route }) => {
   const navigate = useNavigate()
   const controlTitleDesc = useAnimation();
   const [titleDescRef, titleDescInView] = useInView();
+  const controlMoreInfo = useAnimation();
+  const [moreInfoRef, moreInfoInView] = useInView()
   const controlDesc = useAnimation();
   const [descRef, descInView] = useInView();
   const controlDescContainer = useAnimation();
@@ -46,6 +49,14 @@ const Project = ({ name, images, desc, route }) => {
   }, [titleDescInView, controlTitleDesc]);
 
   useEffect(() => {
+    if (moreInfoInView) {
+      controlMoreInfo.start("visible");
+    } else {
+      controlMoreInfo.start("hidden");
+    }
+  }, [moreInfoInView, controlMoreInfo]);
+
+  useEffect(() => {
     if (descInView) {
       controlDesc.start("visible");
     } else {
@@ -65,14 +76,16 @@ const Project = ({ name, images, desc, route }) => {
 
   return (
     <Container closedimg={closed}>
-      <Images
-        src={images}
-        ref={ImgRef}
-        variants={imgAnimation}
-        initial="hidden"
-        animate={controlImg}
-        closedimg={closed}
-      />
+      <ImagesContainer>
+        <Images
+          src={images}
+          ref={ImgRef}
+          variants={imgAnimation}
+          initial="hidden"
+          animate={controlImg}
+          closedimg={closed}
+        />
+      </ImagesContainer>
       <DescriptionContainer closedimg={closed}>
         <DescriptionContentContainer closedimg={closed}>
           <DescriptionTitle
@@ -92,10 +105,10 @@ const Project = ({ name, images, desc, route }) => {
             {desc}
           </Description>
           <MoreInfoButton
-            ref={titleDescRef}
+            ref={moreInfoRef}
             variants={titleDescAnimation}
             initial="hidden"
-            animate={controlTitleDesc}
+            animate={controlMoreInfo}
             onClick={() => navigate(route)}
           >
             More Info

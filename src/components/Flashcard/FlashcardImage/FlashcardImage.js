@@ -23,8 +23,8 @@ const FlashcardImage = (props) => {
             pagesInfo: props.pagesInfo,
           },
           {
-            changeFlashCardImage: new ChangeFlashCardImage(area.name),
-            changeFlashcardMap: new ChangeFlashcardMap(area.name),
+            changeImage: new ChangeFlashCardImage(area.name),
+            changeMap: new ChangeFlashcardMap(area.name),
             setIndex: props.setIndex,
             dispatch: props.dispatch,
             addPage: props.addPage

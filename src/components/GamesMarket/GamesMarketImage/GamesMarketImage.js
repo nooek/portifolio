@@ -25,8 +25,8 @@ const FlashcardImage = (props) => {
             pagesInfo: props.pagesInfo,
           },
           {
-            changeFlashCardImage: new ChangeGamesMarketImage(area.name),
-            changeFlashcardMap: new ChangeGamesMarketMap(area.name),
+            changeImage: new ChangeGamesMarketImage(area.name),
+            changeMap: new ChangeGamesMarketMap(area.name),
             setIndex: props.setIndex,
             dispatch: props.dispatch,
             addPage: props.addPage

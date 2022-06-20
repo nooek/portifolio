@@ -19,11 +19,7 @@ const WhatTheProjectAboutDesc = ({ description }) => {
   return (
     <SectionsDescriptionContainer>
       <SectionsDescription ref={view} initial="hidden" animate={control} variants={descAnimation}>
-        In my path of learning Russian I came across an app called Anki, it's a very common used app
-        to learn vocabulary, and it really works, after months revising and adding new words every
-        day my vocabulary improved and I could remember almost every word. So I decided to build
-        this project, it is completely inspired in Anki's idea of creating decks with cards and
-        studying with them.
+       { description }
       </SectionsDescription>
     </SectionsDescriptionContainer>
   );

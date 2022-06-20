@@ -33,7 +33,7 @@ const TechUsedLogos = ({ logos }) => {
   }, [controlLogo, logoInView]);
 
   return (
-    <SectionsTechsLogosContainer>
+    <SectionsTechsLogosContainer logosQtd={logos.length}>
       {logos.map((logo, index) => {
         return (
           <SectionsTechLogoContainer key={index}>

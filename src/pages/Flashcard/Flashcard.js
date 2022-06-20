@@ -23,7 +23,7 @@ const Flashcard = () => {
         }}
       />
       <InteractiveProjectAlert>
-        You can interect with the image above, just a little way to take a quick look at the project
+        You can interact with the image above, just a little way to take a quick look at the project
       </InteractiveProjectAlert>
       <SectionsContainer>
         <WhatTheProjectAboutTitle />

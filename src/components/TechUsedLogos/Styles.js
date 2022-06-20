@@ -5,7 +5,7 @@ export const SectionsTechsLogosContainer = styled.div`
   width: 100%;
   height: 250px;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.logosQtd > 5 ? "row" : "column"};
   align-items: left;
   justify-content
   border: 2px solid yellow;
