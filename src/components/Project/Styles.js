@@ -19,9 +19,8 @@ export const Container = styled.div`
   }
 `;
 
-export const ImagesContainer = styled.div`
+export const ImagesContainer = styled(motion.div)`
   width: ${(props) => (props.closedimg ? "100%" : "50%")};
-  height: 100%;
   @media(max-width: 680px) {
     width: 100%;
   }
@@ -29,6 +28,8 @@ export const ImagesContainer = styled.div`
 
 export const Images = styled(motion.img)`
   object-fit: contain;
+  width: 100%;
+  height: 100%;
   @media(max-width: 680px) {
     width: 100%;
   }

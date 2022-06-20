@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -11,20 +11,16 @@ import {
   Description,
   CloseDescription,
   MoreInfoButton,
-  ImagesContainer
+  ImagesContainer,
 } from "./Styles";
-import {
-  titleDescAnimation,
-  descAnimation,
-  imgAnimation
-} from "./Animations"
+import { titleDescAnimation, descAnimation, imgAnimation } from "./Animations";
 
 const Project = ({ name, images, desc, route }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const controlTitleDesc = useAnimation();
   const [titleDescRef, titleDescInView] = useInView();
   const controlMoreInfo = useAnimation();
-  const [moreInfoRef, moreInfoInView] = useInView()
+  const [moreInfoRef, moreInfoInView] = useInView();
   const controlDesc = useAnimation();
   const [descRef, descInView] = useInView();
   const controlDescContainer = useAnimation();
@@ -76,14 +72,15 @@ const Project = ({ name, images, desc, route }) => {
 
   return (
     <Container closedimg={closed}>
-      <ImagesContainer>
+      <ImagesContainer
+        ref={ImgRef}
+        variants={imgAnimation}
+        initial="hidden"
+        animate={controlImg}
+        closedimg={closed}
+      >
         <Images
           src={images}
-          ref={ImgRef}
-          variants={imgAnimation}
-          initial="hidden"
-          animate={controlImg}
-          closedimg={closed}
         />
       </ImagesContainer>
       <DescriptionContainer closedimg={closed}>
@@ -94,7 +91,7 @@ const Project = ({ name, images, desc, route }) => {
             initial="hidden"
             animate={controlTitleDesc}
           >
-            { name }
+            {name}
           </DescriptionTitle>
           <Description
             ref={descRef}
