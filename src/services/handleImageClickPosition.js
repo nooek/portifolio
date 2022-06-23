@@ -1,12 +1,12 @@
 const handlePosition = (data, functions) => {
-  const newImage = functions.changeImage.change();
-  if (newImage !== data.pagesInfo[data.index].pageVisited) {
+  const newPage = functions.getNewPage(data.areaName);
+  if (newPage.image !== data.pagesInfo[data.index].pageVisited) {
     functions.dispatch(functions.addPage([
       ...data.pagesInfo,
       {
-        pageVisited: newImage,
+        pageVisited: newPage.image,
         pageVisitedName: data.areaName,
-        map: functions.changeMap.change(),
+        map: newPage.map,
       },
     ]));
     console.log(data.pagesInfo)

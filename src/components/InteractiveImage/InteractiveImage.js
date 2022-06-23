@@ -1,15 +1,11 @@
 import React from "react";
 import ImageMapper from "react-image-mapper";
-import ChangeGamesMarketImage from "../../../services/gamesMarket/ChangeGamesMarketImage";
-import ChangeGamesMarketMap from "../../../services/gamesMarket/ChangeGamesMarketMap";
-import ScreenSize from "../../getWindowSize";
-import handleImageClickPosition from "../../../services/handleImageClickPosition";
-import getSizeImage from "../../../services/getSizeImage"
+import ScreenSize from "../getWindowSize";
+import handleImageClickPosition from "../../services/handleImageClickPosition";
+import getSizeImage from "../../services/getSizeImage"
 
-const FlashcardImage = (props) => {
+const InteractiveImage = (props) => {
   const screenSize = ScreenSize()
-
-  console.log(props.pagesInfo)
 
   return (
     <ImageMapper
@@ -25,8 +21,7 @@ const FlashcardImage = (props) => {
             pagesInfo: props.pagesInfo,
           },
           {
-            changeImage: new ChangeGamesMarketImage(area.name),
-            changeMap: new ChangeGamesMarketMap(area.name),
+            getNewPage: props.getNewPage,
             setIndex: props.setIndex,
             dispatch: props.dispatch,
             addPage: props.addPage
@@ -37,4 +32,4 @@ const FlashcardImage = (props) => {
   );
 };
 
-export default FlashcardImage;
+export default InteractiveImage;

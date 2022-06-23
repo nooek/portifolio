@@ -1,6 +1,5 @@
 import React from "react";
 import InteractiveProject from "../../components/InteractiveProject/InteractiveProject";
-import GamesMarketImage from "../../components/GamesMarket/GamesMarketImage/GamesMarketImage";
 import { gmHome } from "../../assets/images/gamesMarket/index";
 import homeMap from "../../components/GamesMarket/GamesMarketImage/Maps/homeMap";
 import { Container, SectionsContainer, InteractiveProjectAlert } from "./Styles";
@@ -10,17 +9,18 @@ import {
 } from "../../components/GeneralSections/WhatTheProjectAbout/index";
 import TechUsed from "../../components/GamesMarket/GamesMarketProject/TechUsed";
 import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitRepo/index";
+import getGamesMarketNewPage from "../../services/gamesMarket/getGamesMarketNewPage";
 
 const GamesMarket = () => {
   return (
     <Container>
       <InteractiveProject
-        ImageComponent={GamesMarketImage}
         defaultPageInfo={{
           image: gmHome,
           areaName: "home",
           map: homeMap,
         }}
+        getNewPage={getGamesMarketNewPage}
       />
       <InteractiveProjectAlert>
         You can interact with the image above, just a little way to take a quick look at the project

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, SectionsContainer, InteractiveProjectAlert } from "./Styles";
 import InteractiveProject from "../../components/InteractiveProject/InteractiveProject";
-import FlashcardImage from "../../components/Flashcard/FlashcardImage/FlashcardImage"
 import TechUsed from "../../components/Flashcard/FlashcardProject/TechUsed";
 import {
   WhatTheProjectAboutDesc,
@@ -10,17 +9,18 @@ import {
 import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitRepo/index";
 import { flashcardHome } from "../../assets/images/flashcard/index"
 import { homeMap } from "../../components/Flashcard/FlashcardImage/Maps/HomeMap"
+import getFlashcardNewPage from "../../services/flashcard/getFlashcardNewPage";
 
 const Flashcard = () => {
   return (
     <Container>
       <InteractiveProject 
-        ImageComponent={FlashcardImage}
         defaultPageInfo={{
           image: flashcardHome,
           areaName: 'home',
           map: homeMap
         }}
+        getNewPage={getFlashcardNewPage}
       />
       <InteractiveProjectAlert>
         You can interact with the image above, just a little way to take a quick look at the project

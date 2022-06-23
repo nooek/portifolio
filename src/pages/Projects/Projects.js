@@ -3,8 +3,9 @@ import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Container, Header, Title, ProjectsContainer } from "./Styles";
 import { gmHome } from "../../assets/images/gamesMarket/index";
-import { talkingAppHome } from "../../assets/images/talkingApp/index";
+import { taHomeChatOpened } from "../../assets/images/talkingApp/index";
 import { flashcardHome } from "../../assets/images/flashcard/index"
+import spotifyExtension from "../../assets/images/spotifyExtension/index"
 import Project from "../../components/Project/Project";
 
 const Projects = () => {
@@ -40,14 +41,21 @@ const Projects = () => {
         />
         <Project
           name="Talking app"
-          images={talkingAppHome}
+          images={taHomeChatOpened}
           desc="I was testing SocketIo, a library used to pass real-time
           info between the server and client. I decided to do a basic project of
           a messager sender, but then I decided to take the project to other level and implement accounts,
           decent interface, friendship system etc."
           route="/talkingapp"
         />
-
+        <Project
+          name="Spotify lyrics translator extension"
+          images={spotifyExtension}
+          desc="Spotify doesn't have a official lyrics translator, so I made an extension to solve this problem,
+          the extension takes the lyric line, detects the language, translate to english and show the translation next
+          to the original sentence."
+          route="/spotifyextension"
+        />
         <Project
           name="Flashcards"
           images={flashcardHome}

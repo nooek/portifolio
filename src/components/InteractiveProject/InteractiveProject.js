@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ChangersBtnsContainer, Middle, ImagesContainer } from "./Styles";
 import { useSelector, useDispatch } from "react-redux";
 import { addPage } from "../../store/pagesInfo/pagesInfo";
+import InteractiveImage from "../InteractiveImage/InteractiveImage"
 
-const InteractiveProject = ({ ImageComponent, defaultPageInfo }) => {
+const InteractiveProject = ({ defaultPageInfo, getNewPage }) => {
   const pagesInfo = useSelector((state) => state.pagesInfo.data);
   const dispatch = useDispatch();
   const [index, setIndex] = useState(0);
@@ -26,12 +27,13 @@ const InteractiveProject = ({ ImageComponent, defaultPageInfo }) => {
     <ImagesContainer>
       <Middle>
         {!loading ? (
-          <ImageComponent
+          <InteractiveImage
             index={index}
             setIndex={setIndex}
             pagesInfo={pagesInfo}
             dispatch={dispatch}
             addPage={addPage}
+            getNewPage={getNewPage}
           />
         ) : null}
       </Middle>

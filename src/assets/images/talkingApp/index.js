@@ -1,5 +1,7 @@
-import talkingAppHome from "./talkingAppHome.png"
+import taHome from "./taHome.png"
+import taHomeChatOpened from "./taHomeChatOpened.png"
 
 export {
-  talkingAppHome
+  taHome,
+  taHomeChatOpened
 };
