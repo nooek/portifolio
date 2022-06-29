@@ -79,9 +79,7 @@ const Project = ({ name, images, desc, route }) => {
         animate={controlImg}
         closedimg={closed}
       >
-        <Images
-          src={images}
-        />
+        <Images src={images} />
       </ImagesContainer>
       <DescriptionContainer closedimg={closed}>
         <DescriptionContentContainer closedimg={closed}>
@@ -101,15 +99,17 @@ const Project = ({ name, images, desc, route }) => {
           >
             {desc}
           </Description>
-          <MoreInfoButton
-            ref={moreInfoRef}
-            variants={titleDescAnimation}
-            initial="hidden"
-            animate={controlMoreInfo}
-            onClick={() => navigate(route)}
-          >
-            More Info
-          </MoreInfoButton>
+          {route ? (
+            <MoreInfoButton
+              ref={moreInfoRef}
+              variants={titleDescAnimation}
+              initial="hidden"
+              animate={controlMoreInfo}
+              onClick={() => navigate(route)}
+            >
+              More Info
+            </MoreInfoButton>
+          ) : null}
         </DescriptionContentContainer>
         {closed ? (
           <CloseDescription closedimg={closed} onClick={() => setClosed(0)}>

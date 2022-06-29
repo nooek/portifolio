@@ -54,7 +54,6 @@ const Projects = () => {
           desc="Spotify doesn't have a official lyrics translator, so I made an extension to solve this problem,
           the extension takes the lyric line, detects the language, translate to english and show the translation next
           to the original sentence."
-          route="/spotifyextension"
         />
         <Project
           name="Flashcards"

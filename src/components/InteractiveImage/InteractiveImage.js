@@ -6,6 +6,7 @@ import getSizeImage from "../../services/getSizeImage"
 
 const InteractiveImage = (props) => {
   const screenSize = ScreenSize()
+  console.log(props.pagesInfo)
 
   return (
     <ImageMapper
@@ -18,6 +19,7 @@ const InteractiveImage = (props) => {
           {
             index: props.index,
             areaName: area.name,
+            currAreaName: props.pagesInfo[props.index].pageVisitedName,
             pagesInfo: props.pagesInfo,
           },
           {

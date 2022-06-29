@@ -6,6 +6,7 @@ import styledComponentsLogo from "./styledComponents-logo.png"
 import nodeJsLogo from "./nodejs-logo.png"
 import mySqlLogo from "./mysql-logo.png"
 import sequelizeLogo from "./sequelize-logo.png"
+import socketIoLogo from "./socketio-logo.svg"
 
 export {
   javascriptLogo,
@@ -15,5 +16,6 @@ export {
   styledComponentsLogo,
   nodeJsLogo,
   mySqlLogo,
-  sequelizeLogo
+  sequelizeLogo,
+  socketIoLogo
 }
