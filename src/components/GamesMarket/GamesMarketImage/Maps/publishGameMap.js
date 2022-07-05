@@ -5,7 +5,6 @@ export const publishGameMap = {
       name: "publish-game-scrolleddown",
       shape: "rect",
       coords: [2000, 910, 1980, 987],
-      preFillColor: "green",
     },
   ],
 };
@@ -17,7 +16,6 @@ export const publishGameMapScrolledDown = {
       name: "home",
       shape: "rect",
       coords: [2000, 0, 1980, 70],
-      preFillColor: "black",
     },
   ],
 };

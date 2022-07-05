@@ -10,6 +10,7 @@ import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitR
 import { flashcardHome } from "../../assets/images/flashcard/index"
 import { homeMap } from "../../components/Flashcard/FlashcardImage/Maps/HomeMap"
 import getFlashcardNewPage from "../../services/flashcard/getFlashcardNewPage";
+import message from "../message"
 
 const Flashcard = () => {
   return (
@@ -23,7 +24,7 @@ const Flashcard = () => {
         getNewPage={getFlashcardNewPage}
       />
       <InteractiveProjectAlert>
-        You can interact with the image above, just a little way to take a quick look at the project
+        { message }
       </InteractiveProjectAlert>
       <SectionsContainer>
         <WhatTheProjectAboutTitle />

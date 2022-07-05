@@ -8,7 +8,6 @@ export const studyMap = {
       name: "show-awnser",
       shape: "rect",
       coords: [951, 786, 1050, 818],
-      preFillColor: "red",
     },
   ]
 }
@@ -21,7 +20,6 @@ export const studyMapShow = {
       name: "next-card",
       shape: "rect",
       coords: [766, 786, 1235, 818],
-      preFillColor: "red",
     },
   ]
 }

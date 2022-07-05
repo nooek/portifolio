@@ -10,6 +10,7 @@ import {
 import TechUsed from "../../components/GamesMarket/GamesMarketProject/TechUsed";
 import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitRepo/index";
 import getGamesMarketNewPage from "../../services/gamesMarket/getGamesMarketNewPage";
+import message from "../message"
 
 const GamesMarket = () => {
   return (
@@ -23,7 +24,7 @@ const GamesMarket = () => {
         getNewPage={getGamesMarketNewPage}
       />
       <InteractiveProjectAlert>
-        You can interact with the image above, just a little way to take a quick look at the project
+        { message }
       </InteractiveProjectAlert>
       <SectionsContainer>
         <WhatTheProjectAboutTitle />

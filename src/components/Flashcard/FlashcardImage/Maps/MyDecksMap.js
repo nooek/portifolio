@@ -8,19 +8,16 @@ export const myDecksMap = {
       name: "see-description",
       shape: "rect",
       coords: [873, 553, 1132, 582],
-      preFillColor: "red",
     },
     {
       name: "add-card",
       shape: "rect",
       coords: [873, 513, 1132, 542],
-      preFillColor: "black"
     },
     {
       name: "study",
       shape: "rect",
       coords: [920, 448, 1080, 410],
-      preFillColor: "green"
     }
   ]
 }
@@ -33,7 +30,6 @@ export const myDecksSeeDescMap = {
       name: "hide-description",
       shape: "rect",
       coords: [873, 553, 1132, 582],
-      preFillColor: "red",
     },
   ]
 }

@@ -10,6 +10,7 @@ import {
 import TechUsed from "../../components/TalkingApp/TalkingAppProject/TechUsed";
 import { GitRepoDesc, GitRepoTitle } from "../../components/GeneralSections/GitRepo/index";
 import getTalkingAppNewPage from "../../services/talkingApp/getTalkingAppNewPage";
+import message from "../message"
 
 const TalkingApp = () => {
   return (
@@ -23,7 +24,7 @@ const TalkingApp = () => {
         getNewPage={getTalkingAppNewPage}
       />
       <InteractiveProjectAlert>
-        You can interact with the image above, just a little way to take a quick look at the project
+        { message }
       </InteractiveProjectAlert>
       <SectionsContainer>
         <WhatTheProjectAboutTitle />

@@ -5,7 +5,6 @@ export const coolComedyMap = {
       name: "cool-comedy-comments",
       shape: "rect",
       coords: [2000, 910, 1980, 987],
-      preFillColor: "green",
     },
   ],
 };
@@ -17,7 +16,6 @@ export const coolComedyCommentsMap = {
       name: "cool-comedy",
       shape: "rect",
       coords: [2000, 0, 1980, 70],
-      preFillColor: "black",
     },
   ],
 };

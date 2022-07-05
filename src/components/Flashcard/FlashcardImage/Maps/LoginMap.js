@@ -5,7 +5,6 @@ const loginMap = {
       name: "register",
       shape: "rect",
       coords: [850, 618, 1150, 638],
-      preFillColor: "black"
     }
   ],
 };
