@@ -14,7 +14,7 @@ const Home = () => {
       <MyProjects onClick={() => navigate("/projects")}>
         <Title>My Projects</Title>
       </MyProjects>
-      <AboutMe>
+      <AboutMe onClick={() => navigate("/aboutme")}>
         <Title>About Me</Title>
       </AboutMe>
     </Container>
